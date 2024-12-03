@@ -1,17 +1,18 @@
-import 'package:flutter/gestures.dart';
+// import '../views/splash_screen_view.dart';
+
+import 'package:bpp_frontend/controller/screens/screen_dashbaord.dart';
+import 'package:bpp_frontend/views/login_screen_view.dart';
+import 'package:bpp_frontend/views/sign_up_screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../controller/screens/screen_dashbaord.dart';
-import './login_screen_view.dart';
-import './sign_up_screen_view.dart';
-// import '../views/splash_screen_view.dart';
 
 class IntroScreen extends StatefulWidget {
   @override
   _IntroScreenState createState() => _IntroScreenState();
 }
 
-class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStateMixin {
+class _IntroScreenState extends State<IntroScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _logoAnimation;
   late Animation<Offset> _partyNameSlideAnimation;
@@ -245,9 +246,6 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
   //   );
   // }
 
-
-
-
   // Widget _buildNavigationButtons(BoxConstraints constraints) {
   //   return Positioned(
   //     bottom: constraints.maxHeight * 0.0,
@@ -272,12 +270,15 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
   Widget _buildPartyTexts(BoxConstraints constraints, double textScaleFactor) {
     double fontSize;
     // Check the screen width to determine the appropriate font size
-    if (constraints.maxWidth <= 600) { // Phone
-      fontSize = 25;  // Font size for phones
-    } else if (constraints.maxWidth <= 1200) { // Tablet
-      fontSize = 36;  // Font size for tablets
-    } else { // Desktop
-      fontSize = 48;  // Font size for desktop
+    if (constraints.maxWidth <= 600) {
+      // Phone
+      fontSize = 25; // Font size for phones
+    } else if (constraints.maxWidth <= 1200) {
+      // Tablet
+      fontSize = 36; // Font size for tablets
+    } else {
+      // Desktop
+      fontSize = 48; // Font size for desktop
     }
 
     return Positioned(
@@ -291,7 +292,7 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
             child: Text(
               'Bharatiya Popular Party',
               style: TextStyle(
-                fontSize: fontSize,  // Dynamic font size based on screen width
+                fontSize: fontSize, // Dynamic font size based on screen width
                 fontWeight: FontWeight.bold,
                 color: Colors.blueAccent,
               ),
@@ -338,7 +339,6 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
     );
   }
 
-
   // Widget _buildNavigationButtons(BoxConstraints constraints) {
   //   return Positioned(
   //     top: constraints.maxHeight * 0.05,  // Adjusted for a little space from the top
@@ -366,7 +366,6 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
   //   );
   // }
 
-
   Widget _buildNavigationButtons(BoxConstraints constraints) {
     final size = MediaQuery.of(context).size;
     final isTablet = size.width > 600;
@@ -374,32 +373,44 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
 
     return Positioned(
       // Adjust top or bottom positioning based on device type
-      top: isTablet ? constraints.maxHeight * 0.05 : null, // Position at the top for tablet
-      bottom: isPhone ? constraints.maxHeight * 0.05 : null, // Position at the bottom for phone
+      top: isTablet
+          ? constraints.maxHeight * 0.05
+          : null, // Position at the top for tablet
+      bottom: isPhone
+          ? constraints.maxHeight * 0.05
+          : null, // Position at the bottom for phone
       left: 0,
       right: 0,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, // To place buttons on left and right
+        mainAxisAlignment: MainAxisAlignment
+            .spaceBetween, // To place buttons on left and right
         children: [
           Padding(
-            padding: EdgeInsets.only(left: constraints.maxWidth * 0.05), // Left padding
-            child: _buildButton('Sign In', () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => LoginScreenView()),
-            )),
+            padding: EdgeInsets.only(
+                left: constraints.maxWidth * 0.05), // Left padding
+            child: _buildButton(
+                'Sign In',
+                () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LoginScreenView()),
+                    )),
           ),
           Padding(
-            padding: EdgeInsets.only(right: constraints.maxWidth * 0.05), // Right padding
-            child: _buildButton('Sign Up', () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SignUpScreenView()),
-            )),
+            padding: EdgeInsets.only(
+                right: constraints.maxWidth * 0.05), // Right padding
+            child: _buildButton(
+                'Sign Up',
+                () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SignUpScreenView()),
+                    )),
           ),
         ],
       ),
     );
   }
-
 
   Widget _buildButton(String text, VoidCallback onTap) {
     return GestureDetector(
@@ -530,7 +541,9 @@ class _IntroScreenState extends State<IntroScreen> with SingleTickerProviderStat
       child: Row(
         children: [
           Icon(
-            isWallpaperEnabled ? Icons.check_circle : Icons.check_circle_outline,
+            isWallpaperEnabled
+                ? Icons.check_circle
+                : Icons.check_circle_outline,
             color: showErrorIcon ? Colors.red : Colors.blue,
             size: 28,
           ),

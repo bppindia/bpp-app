@@ -1,0 +1,224 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.bpp_frontend"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/debug/AndroidManifest.xml:7:5-66
+15-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/debug/AndroidManifest.xml:7:22-64
+16
+17    <queries>
+17-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/main/AndroidManifest.xml:39:5-44:15
+18        <intent>
+18-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/debug/AndroidManifest.xml:10:9-13:18
+19            <action android:name="android.intent.action.VIEW" />
+19-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/debug/AndroidManifest.xml:11:13-65
+19-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/debug/AndroidManifest.xml:11:21-62
+20
+21            <data android:scheme="https" />
+21-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/main/AndroidManifest.xml:42:13-50
+21-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/debug/AndroidManifest.xml:12:19-41
+22        </intent>
+23        <intent>
+23-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/main/AndroidManifest.xml:40:9-43:18
+24            <action android:name="android.intent.action.PROCESS_TEXT" />
+24-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/main/AndroidManifest.xml:41:13-72
+24-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/main/AndroidManifest.xml:41:21-70
+25
+26            <data android:mimeType="text/plain" />
+26-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/main/AndroidManifest.xml:42:13-50
+26-->/Users/mayurpatil/Desktop/s1/bpp-app/android/app/src/main/AndroidManifest.xml:42:19-48
+27        </intent>
+28    </queries>
+29
+30    <permission
+30-->[androidx.core:core:1.13.1] /Users/mayurpatil/.gradle/caches/transforms-3/c666c258fca39b3353b46678a6b928ab/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+31        android:name="com.example.bpp_frontend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+31-->[androidx.core:core:1.13.1] /Users/mayurpatil/.gradle/caches/transforms-3/c666c258fca39b3353b46678a6b928ab/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+32        android:protectionLevel="signature" />
+32-->[androidx.core:core:1.13.1] /Users/mayurpatil/.gradle/caches/transforms-3/c666c258fca39b3353b46678a6b928ab/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+33
+34    <uses-permission android:name="com.example.bpp_frontend.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+34-->[androidx.core:core:1.13.1] /Users/mayurpatil/.gradle/caches/transforms-3/c666c258fca39b3353b46678a6b928ab/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.13.1] /Users/mayurpatil/.gradle/caches/transforms-3/c666c258fca39b3353b46678a6b928ab/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+35
+36    <application
+37        android:name="android.app.Application"
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.13.1] /Users/mayurpatil/.gradle/caches/transforms-3/c666c258fca39b3353b46678a6b928ab/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+39        android:debuggable="true"
+40        android:extractNativeLibs="true"
+41        android:icon="@mipmap/ic_launcher"
+42        android:label="BPP" >
+43        <activity
+44            android:name="com.example.bpp_frontend.MainActivity"
+45            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+46            android:exported="true"
+47            android:hardwareAccelerated="true"
+48            android:launchMode="singleTop"
+49            android:taskAffinity=""
+50            android:theme="@style/LaunchTheme"
+51            android:windowSoftInputMode="adjustResize" >
+52
+53            <!--
+54                 Specifies an Android theme to apply to this Activity as soon as
+55                 the Android process has started. This theme is visible to the user
+56                 while the Flutter UI initializes. After that, this theme continues
+57                 to determine the Window background behind the Flutter UI.
+58            -->
+59            <meta-data
+60                android:name="io.flutter.embedding.android.NormalTheme"
+61                android:resource="@style/NormalTheme" />
+62
+63            <intent-filter>
+64                <action android:name="android.intent.action.MAIN" />
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+67            </intent-filter>
+68        </activity>
+69        <!--
+70             Don't delete the meta-data below.
+71             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+72        -->
+73        <meta-data
+74            android:name="flutterEmbedding"
+75            android:value="2" />
+76
+77        <uses-library
+77-->[androidx.window:window:1.2.0] /Users/mayurpatil/.gradle/caches/transforms-3/3e108fe9d597d03770ae82acaebb5b63/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+78            android:name="androidx.window.extensions"
+78-->[androidx.window:window:1.2.0] /Users/mayurpatil/.gradle/caches/transforms-3/3e108fe9d597d03770ae82acaebb5b63/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+79            android:required="false" />
+79-->[androidx.window:window:1.2.0] /Users/mayurpatil/.gradle/caches/transforms-3/3e108fe9d597d03770ae82acaebb5b63/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+80        <uses-library
+80-->[androidx.window:window:1.2.0] /Users/mayurpatil/.gradle/caches/transforms-3/3e108fe9d597d03770ae82acaebb5b63/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+81            android:name="androidx.window.sidecar"
+81-->[androidx.window:window:1.2.0] /Users/mayurpatil/.gradle/caches/transforms-3/3e108fe9d597d03770ae82acaebb5b63/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+82            android:required="false" />
+82-->[androidx.window:window:1.2.0] /Users/mayurpatil/.gradle/caches/transforms-3/3e108fe9d597d03770ae82acaebb5b63/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+83
+84        <provider
+84-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mayurpatil/.gradle/caches/transforms-3/5d9083683aa46ad6646ca7a884bd56df/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+85            android:name="androidx.startup.InitializationProvider"
+85-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mayurpatil/.gradle/caches/transforms-3/5d9083683aa46ad6646ca7a884bd56df/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+86            android:authorities="com.example.bpp_frontend.androidx-startup"
+86-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mayurpatil/.gradle/caches/transforms-3/5d9083683aa46ad6646ca7a884bd56df/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+87            android:exported="false" >
+87-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mayurpatil/.gradle/caches/transforms-3/5d9083683aa46ad6646ca7a884bd56df/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+88            <meta-data
+88-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mayurpatil/.gradle/caches/transforms-3/5d9083683aa46ad6646ca7a884bd56df/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+89                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+89-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mayurpatil/.gradle/caches/transforms-3/5d9083683aa46ad6646ca7a884bd56df/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+90                android:value="androidx.startup" />
+90-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mayurpatil/.gradle/caches/transforms-3/5d9083683aa46ad6646ca7a884bd56df/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+91            <meta-data
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+92                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+93                android:value="androidx.startup" />
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+94        </provider>
+95
+96        <receiver
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+97            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+98            android:directBootAware="false"
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+99            android:enabled="true"
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+100            android:exported="true"
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+101            android:permission="android.permission.DUMP" >
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+102            <intent-filter>
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+103                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+104            </intent-filter>
+105            <intent-filter>
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+106                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+107            </intent-filter>
+108            <intent-filter>
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+109                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+110            </intent-filter>
+111            <intent-filter>
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+112                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/mayurpatil/.gradle/caches/transforms-3/1e1e8719823df11c58e964840aa823f6/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+113            </intent-filter>
+114        </receiver>
+115    </application>
+116
+117</manifest> <!-- import 'package:flutter/material.dart'; -->
+118<!-- import 'package:flutter/gestures.dart'; -->
+119<!-- import 'package:url_launcher/url_launcher.dart'; -->
+120<!-- // ... rest of your imports and class definitions ... -->
+121<!-- Widget build(BuildContext context) { -->
+122<!-- return RichText( -->
+123<!-- text: TextSpan( -->
+124<!-- style: TextStyle(color: Colors.black), -->
+125<!-- children: [ -->
+126<!-- TextSpan( -->
+127<!-- text: 'By continuing, you agree to the ', -->
+128<!-- ), -->
+129<!-- TextSpan( -->
+130<!-- text: 'Terms and Conditions', -->
+131<!-- style: TextStyle( -->
+132<!-- color: Colors.blue, -->
+133<!-- decoration: TextDecoration.underline, -->
+134<!-- ), -->
+135<!-- recognizer: TapGestureRecognizer() -->
+136<!-- ..onTap = () async { -->
+137<!-- final url = Uri.parse('https://shadcn-frontend-web.vercel.app/terms'); -->
+138<!-- if (await canLaunchUrl(url)) { -->
+139<!-- await launchUrl(url); -->
+140<!-- } else { -->
+141<!-- // Handle error - show a snackbar or dialog -->
+142<!-- ScaffoldMessenger.of(context).showSnackBar( -->
+143<!-- SnackBar(content: Text('Could not launch Terms and Conditions')), -->
+144<!-- ); -->
+145<!-- } -->
+146<!-- }, -->
+147<!-- ), -->
+148<!-- TextSpan(text: ' and '), -->
+149<!-- TextSpan( -->
+150<!-- text: 'Privacy Policy', -->
+151<!-- style: TextStyle( -->
+152<!-- color: Colors.blue, -->
+153<!-- decoration: TextDecoration.underline, -->
+154<!-- ), -->
+155<!-- recognizer: TapGestureRecognizer() -->
+156<!-- ..onTap = () async { -->
+157<!-- final url = Uri.parse('https://shadcn-frontend-web.vercel.app/privacy-policy'); -->
+158<!-- if (await canLaunchUrl(url)) { -->
+159<!-- await launchUrl(url); -->
+160<!-- } else { -->
+161<!-- // Handle error - show a snackbar or dialog -->
+162<!-- ScaffoldMessenger.of(context).showSnackBar( -->
+163<!-- SnackBar(content: Text('Could not launch Privacy Policy')), -->
+164<!-- ); -->
+165<!-- } -->
+166<!-- }, -->
+167<!-- ), -->
+168<!-- ], -->
+169<!-- ), -->
+170<!-- ); -->
+171<!-- } -->
