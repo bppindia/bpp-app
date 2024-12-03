@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The INTERNET permission is required for development. Specifically,
+         the Flutter tool needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+</manifest>
+
+
+
+
+
+
+
+<!--    import 'package:flutter/material.dart';-->
+<!--    import 'package:flutter/gestures.dart';-->
+<!--    import 'package:url_launcher/url_launcher.dart';-->
+
+<!--    // ... rest of your imports and class definitions ...-->
+
+<!--    Widget build(BuildContext context) {-->
+<!--    return RichText(-->
+<!--    text: TextSpan(-->
+<!--    style: TextStyle(color: Colors.black),-->
+<!--    children: [-->
+<!--    TextSpan(-->
+<!--    text: 'By continuing, you agree to the ',-->
+<!--    ),-->
+<!--    TextSpan(-->
+<!--    text: 'Terms and Conditions',-->
+<!--    style: TextStyle(-->
+<!--    color: Colors.blue,-->
+<!--    decoration: TextDecoration.underline,-->
+<!--    ),-->
+<!--    recognizer: TapGestureRecognizer()-->
+<!--    ..onTap = () async {-->
+<!--    final url = Uri.parse('https://shadcn-frontend-web.vercel.app/terms');-->
+<!--    if (await canLaunchUrl(url)) {-->
+<!--    await launchUrl(url);-->
+<!--    } else {-->
+<!--    // Handle error - show a snackbar or dialog-->
+<!--    ScaffoldMessenger.of(context).showSnackBar(-->
+<!--    SnackBar(content: Text('Could not launch Terms and Conditions')),-->
+<!--    );-->
+<!--    }-->
+<!--    },-->
+<!--    ),-->
+<!--    TextSpan(text: ' and '),-->
+<!--    TextSpan(-->
+<!--    text: 'Privacy Policy',-->
+<!--    style: TextStyle(-->
+<!--    color: Colors.blue,-->
+<!--    decoration: TextDecoration.underline,-->
+<!--    ),-->
+<!--    recognizer: TapGestureRecognizer()-->
+<!--    ..onTap = () async {-->
+<!--    final url = Uri.parse('https://shadcn-frontend-web.vercel.app/privacy-policy');-->
+<!--    if (await canLaunchUrl(url)) {-->
+<!--    await launchUrl(url);-->
+<!--    } else {-->
+<!--    // Handle error - show a snackbar or dialog-->
+<!--    ScaffoldMessenger.of(context).showSnackBar(-->
+<!--    SnackBar(content: Text('Could not launch Privacy Policy')),-->
+<!--    );-->
+<!--    }-->
+<!--    },-->
+<!--    ),-->
+<!--    ],-->
+<!--    ),-->
+<!--    );-->
+<!--    }-->
