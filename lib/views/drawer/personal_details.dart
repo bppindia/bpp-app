@@ -1316,7 +1316,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       addressLine2Controller =
           TextEditingController(text: prefs.getString('addressLine2') ?? '');
       cityOrVillageController =
-          TextEditingController(text: prefs.getString('city') ?? '');
+          TextEditingController(text: prefs.getString('cityOrVillage') ?? '');
       stateController =
           TextEditingController(text: prefs.getString('state') ?? '');
       pinCodeController =
@@ -2068,7 +2068,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     await prefs.setString('addressLine1', addressLine1Controller.text);
     await prefs.setString('addressLine2', addressLine2Controller.text);
-    await prefs.setString('city', cityOrVillageController.text);
+    await prefs.setString('cityOrVillage', cityOrVillageController.text);
     await prefs.setString('state', stateController.text);
     await prefs.setString('pinCode', pinCodeController.text);
 
