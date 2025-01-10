@@ -1,284 +1,14 @@
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:bpp_frontend/views/sign_up_screen_view.dart';
-// import 'package:bpp_frontend/controller/screens/dashbaord_screen.dart';
-//
-// import '../utils/primary_config.dart';
-// import 'dart:async';
-// import 'component/registration/personal_page.dart';
-//
-// void main() {
-//   runApp(MyApp());
-// }
-//
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: VerificationPage(contactInfo: "+91-8291899794"),
-//     );
-//   }
-// }
-//
-// class VerificationPage extends StatefulWidget {
-//   final String contactInfo;
-//
-//   VerificationPage({required this.contactInfo});
-//
-//   @override
-//   _VerificationPageState createState() => _VerificationPageState();
-// }
-//
-// class _VerificationPageState extends State<VerificationPage> {
-//   final TextEditingController _codeController = TextEditingController();
-//   bool codeSent = false;
-//   bool isCodeExpired = false;
-//   int remainingTime = 20;
-//   late Timer _timer;
-//
-//   @override
-//   void initState() {
-//     super.initState();
-//     _startTimer();
-//   }
-//
-//   @override
-//   void dispose() {
-//     _timer.cancel();
-//     super.dispose();
-//   }
-//
-//   void _startTimer() {
-//     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-//       if (remainingTime > 0) {
-//         setState(() {
-//           remainingTime--;
-//         });
-//       } else {
-//         setState(() {
-//           isCodeExpired = true;
-//         });
-//         _timer.cancel();
-//       }
-//     });
-//   }
-//
-//   String get formattedTime {
-//     int minutes = remainingTime ~/ 60;
-//     int seconds = remainingTime % 60;
-//     return '$minutes:${seconds.toString().padLeft(2, '0')}';
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     final bool isEmail = widget.contactInfo.contains("@");
-//     final screenSize = MediaQuery.of(context).size;
-//     final isSmallScreen = screenSize.width < 600;
-//
-//     return Scaffold(
-//       body: SafeArea(
-//         child: LayoutBuilder(
-//           builder: (context, constraints) {
-//             return SingleChildScrollView(
-//               child: ConstrainedBox(
-//                 constraints: BoxConstraints(
-//                   minHeight: constraints.maxHeight,
-//                 ),
-//                 child: Center(
-//                   child: Padding(
-//                     padding: EdgeInsets.symmetric(
-//                       horizontal: isSmallScreen ? 16.0 : screenSize.width * 0.1,
-//                       vertical: 16.0,
-//                     ),
-//                     child: Container(
-//                       width: isSmallScreen ? double.infinity : 500,
-//                       padding: EdgeInsets.all(isSmallScreen ? 16.0 : 24.0),
-//                       decoration: BoxDecoration(
-//                         color: Colors.white,
-//                         borderRadius: BorderRadius.circular(12.0),
-//                         boxShadow: [
-//                           BoxShadow(
-//                             color: Colors.grey.withOpacity(0.2),
-//                             spreadRadius: 5,
-//                             blurRadius: 10,
-//                             offset: Offset(0, 3),
-//                           ),
-//                         ],
-//                       ),
-//                       child: Column(
-//                         mainAxisSize: MainAxisSize.min,
-//                         children: [
-//                           Image.asset(
-//                             'assets/images/bpp_logo2.png',
-//                             height: isSmallScreen ? 76 : 90,
-//                           ),
-//                           const SizedBox(height: 14),
-//                           FittedBox(
-//                             child: Text.rich(
-//                               TextSpan(
-//                                 text: 'Bharatiya Popular Party', // "Welcome to" part in black
-//                                 style: TextStyle(
-//                                   fontWeight: FontWeight.bold,
-//                                   fontSize: isSmallScreen ? 24 : 28,
-//                                   color: Colors.blue,
-//                                 ),
-//                               ),
-//                               textAlign: TextAlign.center,
-//                             ),
-//                           ),
-//                           SizedBox(height: isSmallScreen ? 16 : 20),
-//                           Text(
-//                             isEmail ? 'Verify your email' : 'Verify your number',
-//                             style: TextStyle(
-//                               fontSize: isSmallScreen ? 24 : 28,
-//                               fontWeight: FontWeight.bold,
-//                             ),
-//                           ),
-//                           SizedBox(height: isSmallScreen ? 8 : 10),
-//                           FittedBox(
-//                             fit: BoxFit.scaleDown,
-//                             child: Text(
-//                               'Please enter the 6-digit verification code sent to ${widget.contactInfo}.\nThe code is valid for 30 minutes.',
-//                               textAlign: TextAlign.center,
-//                               style: TextStyle(
-//                                 fontSize: isSmallScreen ? 14 : 16,
-//                                 color: Colors.grey[700],
-//                               ),
-//                             ),
-//                           ),
-//                           SizedBox(height: isSmallScreen ? 16 : 20),
-//                           TextField(
-//                             controller: _codeController,
-//                             keyboardType: TextInputType.number,
-//                             maxLength: 6,
-//                             decoration: InputDecoration(
-//                               labelText: 'Verification Code',
-//                               suffixIcon: codeSent
-//                                   ? Icon(Icons.check_circle, color: Colors.green)
-//                                   : null,
-//                               border: OutlineInputBorder(
-//                                 borderRadius: BorderRadius.circular(8.0),
-//                               ),
-//                             ),
-//                           ),
-//                           SizedBox(height: isSmallScreen ? 16 : 20),
-//                           SizedBox(
-//                             width: double.infinity,
-//                             child: ElevatedButton(
-//                               onPressed: () {
-//                                 const temporaryCode = '456789';
-//
-//                                 if (_codeController.text != temporaryCode) {
-//                                   Get.snackbar(
-//                                     'Error',
-//                                     'Please enter the correct verification code: $temporaryCode',
-//                                     backgroundColor: Colors.redAccent,
-//                                     colorText: Colors.white,
-//                                   );
-//                                   return;
-//                                 }
-//
-//                                 if (isCodeExpired) {
-//                                   Get.snackbar(
-//                                     'Error',
-//                                     'The verification code has expired. Please request a new one.',
-//                                     backgroundColor: Colors.redAccent,
-//                                     colorText: Colors.white,
-//                                   );
-//                                   return;
-//                                 }
-//
-//                                 setState(() {
-//                                   codeSent = true;
-//                                 });
-//                                 Get.snackbar(
-//                                   'Success',
-//                                   'Verification successful!',
-//                                   backgroundColor: Colors.green,
-//                                   colorText: Colors.white,
-//                                 );
-//
-//                                 Get.to(() => PersonalPage());
-//                               },
-//                               style: ElevatedButton.styleFrom(
-//                                 backgroundColor: PrimaryConfig.boxColor,
-//                                 padding: EdgeInsets.symmetric(
-//                                   horizontal: isSmallScreen ? 30 : 50,
-//                                   vertical: isSmallScreen ? 12 : 15,
-//                                 ),
-//                                 shape: RoundedRectangleBorder(
-//                                   borderRadius: BorderRadius.circular(8.0),
-//                                 ),
-//                               ),
-//                               child: Text(
-//                                 'Next',
-//                                 style: TextStyle(color: Colors.black),
-//                               ),
-//                             ),
-//                           ),
-//                           SizedBox(height: isSmallScreen ? 8 : 10),
-//                           TextButton(
-//                             onPressed: isCodeExpired
-//                                 ? () {
-//                               Get.to(
-//                                     () => SignUpScreenView(),
-//                                 transition: Transition.rightToLeftWithFade,
-//                               );
-//                             }
-//                                 : null,
-//                             child: Text(
-//                               isCodeExpired
-//                                   ? 'Request a new code'
-//                                   : 'Didn\'t receive the code? Request again',
-//                               style: TextStyle(
-//                                 color: isCodeExpired ? Colors.blue : Colors.grey,
-//                                 fontSize: isSmallScreen ? 12 : 14,
-//                               ),
-//                             ),
-//                           ),
-//                           if (isCodeExpired)
-//                             Text(
-//                               'Code expired! Please request a new one.',
-//                               style: TextStyle(
-//                                 color: Colors.red,
-//                                 fontSize: isSmallScreen ? 12 : 14,
-//                               ),
-//                             ),
-//                           if (!isCodeExpired)
-//                             Text(
-//                               'Remaining time: $formattedTime',
-//                               style: TextStyle(
-//                                 color: Colors.grey[700],
-//                                 fontSize: isSmallScreen ? 12 : 14,
-//                               ),
-//                             ),
-//                         ],
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             );
-//           },
-//         ),
-//       ),
-//     );
-//   }
-// }
-//
-//
-//
+import 'dart:async';
+import 'dart:convert';
+import 'package:bpp_frontend/views/component/registration/personal_page.dart';
+import 'package:bpp_frontend/views/component/registration/registration_page.dart';
+import 'package:bpp_frontend/views/sign_up_screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:bpp_frontend/views/sign_up_screen_view.dart';
-import 'package:bpp_frontend/controller/screens/dashbaord_screen.dart';
-
-import '../utils/primary_config.dart';
-import 'dart:async';
-import 'component/registration/personal_page.dart';
+import 'package:http/http.dart' as http;
 
 class VerificationPage extends StatefulWidget {
-  final String contactInfo;
+  final String contactInfo; // Either phone number or email
 
   VerificationPage({required this.contactInfo});
 
@@ -287,10 +17,12 @@ class VerificationPage extends StatefulWidget {
 }
 
 class _VerificationPageState extends State<VerificationPage> {
-  final TextEditingController _codeController = TextEditingController();
-  bool codeSent = false;
+  final List<TextEditingController> _codeControllers =
+      List.generate(6, (_) => TextEditingController());
+  final List<FocusNode> _focusNodes = List.generate(6, (_) => FocusNode());
+
   bool isCodeExpired = false;
-  int remainingTime = 20;
+  int remainingTime = 180; // 3 minutes timer
   late Timer _timer;
 
   @override
@@ -302,6 +34,12 @@ class _VerificationPageState extends State<VerificationPage> {
   @override
   void dispose() {
     _timer.cancel();
+    for (var controller in _codeControllers) {
+      controller.dispose();
+    }
+    for (var focusNode in _focusNodes) {
+      focusNode.dispose();
+    }
     super.dispose();
   }
 
@@ -326,182 +64,234 @@ class _VerificationPageState extends State<VerificationPage> {
     return '$minutes:${seconds.toString().padLeft(2, '0')}';
   }
 
+  void _onChanged(String value, int index) {
+    if (value.length == 1 && index < 5) {
+      FocusScope.of(context).requestFocus(_focusNodes[index + 1]);
+    } else if (value.isEmpty && index > 0) {
+      FocusScope.of(context).requestFocus(_focusNodes[index - 1]);
+    }
+  }
+
+  Future<void> _verifyOtp() async {
+    String enteredCode =
+        _codeControllers.map((controller) => controller.text).join();
+
+    if (enteredCode.length < 4) {
+      Get.snackbar(
+        'Error',
+        'Please enter a complete 4-digit OTP.',
+        backgroundColor: Colors.redAccent,
+        colorText: Colors.white,
+      );
+      return;
+    }
+
+    if (isCodeExpired) {
+      Get.snackbar(
+        'Error',
+        'The OTP has expired. Please request a new one.',
+        backgroundColor: Colors.redAccent,
+        colorText: Colors.white,
+      );
+      return;
+    }
+
+    // Prepare the dynamic payload
+    final payload = {
+      widget.contactInfo.contains('@') ? 'email' : 'phone': widget.contactInfo,
+      'otp': enteredCode, // The OTP entered by the user
+    };
+
+    final url = Uri.parse('https://api.bppindia.com:8443/api/v1/validate-otp');
+
+    try {
+      print('Payload: $payload'); // Debug payload
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode(payload),
+      );
+
+      print('Response status code: ${response.statusCode}');
+      print('Response body: ${response.body}');
+
+      // Handle different response types
+      if (response.statusCode == 200) {
+        if (response.body.startsWith('{')) {
+          // If the response is in JSON format
+          final responseBody = json.decode(response.body);
+          if (responseBody['status'] == 'success') {
+            Get.snackbar(
+              'Success',
+              'OTP verified successfully!',
+              backgroundColor: Colors.green,
+              colorText: Colors.white,
+            );
+            Get.to(() => PersonalPage());
+          } else {
+            Get.snackbar(
+              'Error',
+              responseBody['message'] ?? 'Invalid OTP. Please try again.',
+              backgroundColor: Colors.redAccent,
+              colorText: Colors.white,
+            );
+          }
+        } else {
+          // If the response is a plain string (e.g., "OTP is valid!")
+          Get.snackbar(
+            'Success',
+            response.body, // Use the plain text response
+            backgroundColor: Colors.green,
+            colorText: Colors.white,
+          );
+          // Get.to(() => PersonalPage());
+          Get.to(() => RegistrationPage());
+        }
+      } else {
+        Get.snackbar(
+          'Error',
+          'Server error: ${response.statusCode}. Please try again later.',
+          backgroundColor: Colors.redAccent,
+          colorText: Colors.white,
+        );
+      }
+    } catch (error) {
+      print('Network error: $error'); // Debug network error
+      Get.snackbar(
+        'Error',
+        'Network error: Unable to reach the server.',
+        backgroundColor: Colors.redAccent,
+        colorText: Colors.white,
+      );
+    }
+  }
+
+  void _clearFields() {
+    for (var controller in _codeControllers) {
+      controller.clear();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final isTablet = size.width > 600;
-    final isDesktop = size.width > 1200;
-
-    final horizontalPadding = size.width * (isDesktop ? 0.2 : isTablet ? 0.1 : 0.05);
-    final containerWidth = isDesktop ? 1000.0 : size.width;
-    final logoSize = size.width * (isDesktop ? 0.15 : isTablet ? 0.2 : 0.26);
-    final titleFontSize = size.width * (isDesktop ? 0.02 : isTablet ? 0.06 : 0.06);
-    final labelFontSize = size.width * (isDesktop ? 0.012 : isTablet ? 0.015 : 0.035);
-
     return Scaffold(
-      body: SafeArea(
+      backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
+      body: Center(
         child: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-              child: Container(
-                width: containerWidth,
-                padding: EdgeInsets.all(isDesktop ? 32.0 : 24.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.2),
-                      spreadRadius: 5,
-                      blurRadius: 10,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Align(
+              alignment: Alignment.center,
+              // This will center the card in the screen
+              child: Card(
+                color: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Image.asset(
-                      'assets/images/bpp_logo2.png',
-                      height: logoSize,
-                    ),
-                    const SizedBox(height: 14),
-                    FittedBox(
-                      child: Text.rich(
-                        TextSpan(
-                          text: 'Bharatiya Popular Party',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: titleFontSize,
-                            color: Colors.blue,
-                          ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5, vertical: 20),
+                  // Adjusted vertical padding
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset('assets/images/bpp_logo2.png', height: 90),
+                      Text(
+                        'Bharatiya Popular Party',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                          color: Colors.blue,
                         ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        'Enter OTP sent to ${widget.contactInfo}',
                         textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey[700],
+                            fontWeight: FontWeight.bold),
                       ),
-                    ),
-                    SizedBox(height: isTablet ? 20 : 16),
-                    Text(
-                      widget.contactInfo.contains('@') ? 'Verify your email' : 'Verify your number',
-                      style: TextStyle(
-                        fontSize: titleFontSize,
-                        fontWeight: FontWeight.bold,
+                      SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(4, (index) {
+                          return Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 2, vertical: 5),
+                            width: 40,
+                            height: 50,
+                            child: TextField(
+                              controller: _codeControllers[index],
+                              focusNode: _focusNodes[index],
+                              textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
+                              maxLength: 1,
+                              onChanged: (value) => _onChanged(value, index),
+                              decoration: InputDecoration(
+                                counterText: '',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          );
+                        }),
                       ),
-                    ),
-                    SizedBox(height: isTablet ? 12 : 10),
-                    Text(
-                      'Please enter the 6-digit verification code sent to ${widget.contactInfo}. The code is valid for 30 minutes.',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: labelFontSize,
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                    SizedBox(height: isTablet ? 20 : 16),
-                    TextField(
-                      controller: _codeController,
-                      keyboardType: TextInputType.number,
-                      maxLength: 6,
-                      decoration: InputDecoration(
-                        labelText: 'Verification Code',
-                        suffixIcon: codeSent
-                            ? Icon(Icons.check_circle, color: Colors.green)
-                            : null,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
+                      SizedBox(height: 16),
+                      Text(
+                        isCodeExpired
+                            ? 'Code expired! Please request a new one.'
+                            : 'Time remaining: $formattedTime',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: isCodeExpired ? Colors.red : Colors.grey[600],
                         ),
                       ),
-                    ),
-                    SizedBox(height: isTablet ? 20 : 16),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          const temporaryCode = '456789';
-
-                          if (_codeController.text != temporaryCode) {
-                            Get.snackbar(
-                              'Error',
-                              'Please enter the correct verification code: $temporaryCode',
-                              backgroundColor: Colors.redAccent,
-                              colorText: Colors.white,
-                            );
-                            return;
-                          }
-
-                          if (isCodeExpired) {
-                            Get.snackbar(
-                              'Error',
-                              'The verification code has expired. Please request a new one.',
-                              backgroundColor: Colors.redAccent,
-                              colorText: Colors.white,
-                            );
-                            return;
-                          }
-
-                          setState(() {
-                            codeSent = true;
-                          });
-                          Get.snackbar(
-                            'Success',
-                            'Verification successful!',
-                            backgroundColor: Colors.green,
-                            colorText: Colors.white,
-                          );
-
-                          Get.to(() => PersonalPage());
-                        },
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: _verifyOtp,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: PrimaryConfig.boxColor,
+                          backgroundColor: Colors.blue,
                           padding: EdgeInsets.symmetric(
-                            horizontal: isDesktop ? 60 : 50,
-                            vertical: isDesktop ? 20 : 15,
-                          ),
+                              vertical: 10, horizontal: 100),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
                         child: Text(
-                          'Next',
-                          style: TextStyle(color: Colors.black),
+                          'Verify OTP',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.white),
                         ),
                       ),
-                    ),
-                    SizedBox(height: isTablet ? 12 : 10),
-                    TextButton(
-                      onPressed: isCodeExpired
-                          ? () {
-                        Get.to(() => SignUpScreenView(),
-                            transition: Transition.rightToLeftWithFade);
-                      }
-                          : null,
-                      child: Text(
-                        isCodeExpired
-                            ? 'Request a new code'
-                            : 'Didn\'t receive the code? Request again',
-                        style: TextStyle(
-                          color: isCodeExpired ? Colors.blue : Colors.grey,
-                          fontSize: labelFontSize,
+                      SizedBox(height: 10),
+                      if (isCodeExpired)
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              isCodeExpired = false;
+                              remainingTime = 180;
+                              _clearFields();
+                              _startTimer();
+                            });
+                          },
+                          child: Text(
+                            'Resend OTP',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                              // decoration: TextDecoration.underline,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                    if (isCodeExpired)
-                      Text(
-                        'Code expired! Please request a new one.',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontSize: labelFontSize,
-                        ),
-                      ),
-                    if (!isCodeExpired)
-                      Text(
-                        'Remaining time: $formattedTime',
-                        style: TextStyle(
-                          color: Colors.grey[700],
-                          fontSize: labelFontSize,
-                        ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -511,4 +301,3 @@ class _VerificationPageState extends State<VerificationPage> {
     );
   }
 }
-

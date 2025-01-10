@@ -7,7 +7,7 @@ class Footer extends StatefulWidget {
 }
 
 class _FooterState extends State<Footer> {
-  int _selectedIndex = 0;  // Initial index is set to 0
+  int _selectedIndex = 0; // Initial index is set to 0
 
   // Handle navigation when an item is tapped
   void _onItemTapped(int index) {
@@ -16,17 +16,17 @@ class _FooterState extends State<Footer> {
     });
 
     switch (index) {
-      case 0:  // Home
-        Get.toNamed('/dashboard');  // Navigate to ScreenDashboard
+      case 0: // Home
+        Get.toNamed('/dashboard'); // Navigate to ScreenDashboard
         break;
-      case 2:  // Goals
-        Get.toNamed('/goals');  // Navigate to GoalsScreen
+      case 2: // Goals
+        Get.toNamed('/goals'); // Navigate to GoalsScreen
         break;
-      case 3:  // Donate
-        Get.toNamed('/donor-dashboard');  // Navigate to DonorDashboard
+      case 3: // Donate
+        Get.toNamed('/donor-dashboard'); // Navigate to DonorDashboard
         break;
-      case 4:  // Donate
-        Get.toNamed('/wallet');  // Navigate to DonorDashboard
+      case 4: // Donate
+        Get.toNamed('/wallet'); // Navigate to DonorDashboard
         break;
     }
   }
@@ -34,7 +34,8 @@ class _FooterState extends State<Footer> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final isWideScreen = screenWidth > 600; // Check for wide screens (Tablet/PC)
+    final isWideScreen =
+        screenWidth > 600; // Check for wide screens1 (Tablet/PC)
 
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
@@ -45,26 +46,26 @@ class _FooterState extends State<Footer> {
       items: [
         _buildNavItem(
           icon: Icons.home,
-          label: 'Home',
+          label: '',
           isSelected: _selectedIndex == 0,
           isWideScreen: isWideScreen,
         ),
         _buildNavItem(
           icon: Icons.sync,
-          label: 'Update',
+          label: '',
           isSelected: _selectedIndex == 1,
           isWideScreen: isWideScreen,
         ),
         _buildCenterItem(),
         _buildNavItem(
           iconAsset: 'assets/images/goal.png',
-          label: 'Goals',
+          label: '',
           isSelected: _selectedIndex == 2,
           isWideScreen: isWideScreen,
         ),
         _buildNavItem(
           icon: Icons.account_balance_wallet,
-          label: 'Wallet',
+          label: '',
           isSelected: _selectedIndex == 3,
           isWideScreen: isWideScreen,
         ),
@@ -90,15 +91,15 @@ class _FooterState extends State<Footer> {
     return BottomNavigationBarItem(
       icon: iconAsset != null
           ? Image.asset(
-        iconAsset,
-        width: isWideScreen ? 30 : 24,
-        height: isWideScreen ? 30 : 24,
-      )
+              iconAsset,
+              width: isWideScreen ? 30 : 24,
+              height: isWideScreen ? 30 : 24,
+            )
           : Icon(
-        icon,
-        size: isWideScreen ? 30 : 24,
-        color: isSelected ? Colors.black : Colors.grey,
-      ),
+              icon,
+              size: isWideScreen ? 30 : 24,
+              color: isSelected ? Colors.black : Colors.grey,
+            ),
       label: label,
     );
   }
@@ -114,21 +115,21 @@ class _FooterState extends State<Footer> {
           shape: BoxShape.circle,
           boxShadow: _selectedIndex == 2
               ? [
-            BoxShadow(
-              color: Colors.blue.withOpacity(0.4),
-              blurRadius: 10,
-              spreadRadius: 2,
-            ),
-          ]
+                  BoxShadow(
+                    color: Colors.blue.withOpacity(0.4),
+                    blurRadius: 10,
+                    spreadRadius: 2,
+                  ),
+                ]
               : [],
         ),
         child: Icon(
-          Icons.volunteer_activism,  // Heart in hand icon for "Donate"
+          Icons.volunteer_activism, // Heart in hand icon for "Donate"
           color: _selectedIndex == 2 ? Colors.white : Colors.blue,
           size: 28,
         ),
       ),
-      label: 'Donate',
+      label: '',
     );
   }
 }

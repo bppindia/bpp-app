@@ -1,4 +1,5 @@
 // dashboard_screen.dart
+// import 'package:bpp_frontend/screens1/map_screen.dart';
 import 'package:flutter/material.dart';
 import '../../views/component/india_map.dart';
 import '../../views/widgets/dashbaord/banner_widget.dart';
@@ -7,9 +8,6 @@ import '../../views/widgets/dashbaord/summary_section.dart';
 import '../../views/widgets/dashbaord/tab_bar_section.dart';
 import 'package:bpp_frontend/views/component/dashbaord/dashboard_header.dart';
 import '../../views/widgets/dashbaord/top_navigation_bar.dart';
-
-
-
 
 class DashboardScreen extends StatelessWidget {
   @override
@@ -30,7 +28,7 @@ class DashboardScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(height: verticalSpacing),
-              SummarySection(),
+              SummarySection(firstName: '', lastName: '', referralCode: '',),
               SizedBox(height: verticalSpacing),
               // ActionButtons(),
               SizedBox(height: verticalSpacing),
@@ -38,6 +36,8 @@ class DashboardScreen extends StatelessWidget {
               SizedBox(height: verticalSpacing),
               IndiaMap(), // Display the India map here
               SizedBox(height: verticalSpacing),
+              // MapScreen(),
+              // SizedBox(height: 1),
               TabBarSection(),
               // DashboardHeader(),
             ],
