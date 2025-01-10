@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../../controller/screens/screen_dashbaord.dart';
 import 'my_drawer_header.dart';
 
-
-
 class CustomDrawer extends StatelessWidget {
   final DrawerSections currentPage;
   final Function(DrawerSections) onSectionSelected;
@@ -33,28 +31,29 @@ class CustomDrawer extends StatelessWidget {
       padding: const EdgeInsets.only(top: 15),
       child: Column(
         children: [
-          _menuItem(
-              context, DrawerSections.dashboard, "Dashboard", Icons.dashboard_outlined),
-          _menuItem(
-              context, DrawerSections.contacts, "Goals", Icons.people_alt_outlined),
+          _menuItem(context, DrawerSections.dashboard, "Dashboard",
+              Icons.dashboard_outlined),
+          _menuItem(context, DrawerSections.contacts, "Goals",
+              Icons.people_alt_outlined),
           _menuItem(context, DrawerSections.events, "Donate", Icons.event),
           _menuItem(context, DrawerSections.notes, "Profile", Icons.notes),
           const Divider(),
-          _menuItem(context, DrawerSections.settings, "Settings", Icons.settings_outlined),
+          _menuItem(context, DrawerSections.settings, "Settings",
+              Icons.settings_outlined),
           _menuItem(context, DrawerSections.notifications, "Notifications",
               Icons.notifications_outlined),
           const Divider(),
           _menuItem(context, DrawerSections.privacy_policy, "Privacy policy",
               Icons.privacy_tip_outlined),
-          _menuItem(context, DrawerSections.send_feedback, "Send feedback",
+          _menuItem(context, DrawerSections.membership, "Send feedback",
               Icons.feedback_outlined),
         ],
       ),
     );
   }
 
-  Widget _menuItem(
-      BuildContext context, DrawerSections section, String title, IconData icon) {
+  Widget _menuItem(BuildContext context, DrawerSections section, String title,
+      IconData icon) {
     final bool isSelected = section == currentPage;
 
     return Material(

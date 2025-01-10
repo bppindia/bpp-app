@@ -1,6 +1,6 @@
 // import 'package:animated_text_kit/animated_text_kit.dart';
 // import 'package:flutter/material.dart';
-// import '../views/splash_screen_view.dart';
+// import '../views/splash_screen..dart';
 //
 // class SplashScreen extends StatefulWidget {
 //   const SplashScreen({Key? key}) : super(key: key);

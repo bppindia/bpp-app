@@ -4,14 +4,14 @@
     "type": "PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.example.bpp_frontend",
+  "applicationId": "com.bharatiyapopularparty.bpp",
   "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
+      "versionCode": 11,
       "versionName": "1.0.0",
       "outputFile": "resources-debug.ap_"
     }
