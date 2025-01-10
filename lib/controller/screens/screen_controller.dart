@@ -16,7 +16,7 @@ class ScreenController extends GetxController {
   RxBool isSelected = false.obs;
   RxBool isPasswordHidden = false.obs;
   RxBool visibleReferralId = false.obs;
-  RxBool isAcceptTerms = false.obs;  // Terms and conditions checkbox
+  RxBool isAcceptTerms = false.obs; // Terms and conditions checkbox
   RxBool isEligibleChecked = false.obs; // New checkbox for eligibility
 
   @override
