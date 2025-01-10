@@ -1,0 +1,4 @@
+#Fri Jan 10 11:26:43 IST 2025
+base.0=/Users/aecci/Desktop/BPP/bpp-app/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

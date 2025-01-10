@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/Users/aecci/Desktop/BPP/bpp-app/android/app"
+    name=":app"
+    type="APP"
+    maven="android:app:"
+    agpVersion="8.1.0"
+    buildFolder="/Users/aecci/Desktop/BPP/bpp-app/build/app"
+    bootClassPath="/Users/aecci/Library/Android/sdk/platforms/android-35/android.jar:/Users/aecci/Library/Android/sdk/build-tools/33.0.1/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-35">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

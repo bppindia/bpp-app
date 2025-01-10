@@ -1,0 +1,291 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.bharatiyapopularparty.bpp"
+4    android:versionCode="12"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+12-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:6:5-79
+12-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:6:22-77
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:7:5-80
+13-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:7:22-78
+14    <!--
+15         Required to query activities that can process text, see:
+16         https://developer.android.com/training/package-visibility and
+17         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+18
+19         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+20    -->
+21    <queries>
+21-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:48:5-53:15
+22        <intent>
+22-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:49:9-52:18
+23            <action android:name="android.intent.action.PROCESS_TEXT" />
+23-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:50:13-72
+23-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:50:21-70
+24
+25            <data android:mimeType="text/plain" />
+25-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:51:13-50
+25-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:51:19-48
+26        </intent>
+27        <intent>
+27-->[:file_picker] /Users/aecci/Desktop/BPP/bpp-app/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-12:18
+28            <action android:name="android.intent.action.GET_CONTENT" />
+28-->[:file_picker] /Users/aecci/Desktop/BPP/bpp-app/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-72
+28-->[:file_picker] /Users/aecci/Desktop/BPP/bpp-app/build/file_picker/intermediates/merged_manifest/release/AndroidManifest.xml:9:21-69
+29
+30            <data android:mimeType="*/*" />
+30-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:51:13-50
+30-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:51:19-48
+31        </intent>
+32    </queries>
+33
+34    <permission
+34-->[androidx.core:core:1.13.1] /Users/aecci/.gradle/caches/transforms-3/d33e4686e1d6c22ccc2414c29938c983/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+35        android:name="com.bharatiyapopularparty.bpp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35-->[androidx.core:core:1.13.1] /Users/aecci/.gradle/caches/transforms-3/d33e4686e1d6c22ccc2414c29938c983/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+36        android:protectionLevel="signature" />
+36-->[androidx.core:core:1.13.1] /Users/aecci/.gradle/caches/transforms-3/d33e4686e1d6c22ccc2414c29938c983/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+37
+38    <uses-permission android:name="com.bharatiyapopularparty.bpp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38-->[androidx.core:core:1.13.1] /Users/aecci/.gradle/caches/transforms-3/d33e4686e1d6c22ccc2414c29938c983/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+38-->[androidx.core:core:1.13.1] /Users/aecci/.gradle/caches/transforms-3/d33e4686e1d6c22ccc2414c29938c983/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+39
+40    <application
+41        android:name="android.app.Application"
+41-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:12:9-42
+42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+42-->[androidx.core:core:1.13.1] /Users/aecci/.gradle/caches/transforms-3/d33e4686e1d6c22ccc2414c29938c983/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+43        android:extractNativeLibs="true"
+44        android:icon="@mipmap/ic_launcher"
+44-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:13:9-43
+45        android:label="BPP" >
+45-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:11:9-28
+46        <activity
+46-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:14:9-36:20
+47            android:name="com.bharatiyapopularparty.bpp.MainActivity"
+47-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:15:13-41
+48            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+48-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:21:13-163
+49            android:exported="true"
+49-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:16:13-36
+50            android:hardwareAccelerated="true"
+50-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:22:13-47
+51            android:launchMode="singleTop"
+51-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:18:13-43
+52            android:requestLegacyExternalStorage="true"
+52-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:17:13-56
+53            android:taskAffinity=""
+53-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:19:13-36
+54            android:theme="@style/LaunchTheme"
+54-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:20:13-47
+55            android:windowSoftInputMode="adjustResize" >
+55-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:23:13-55
+56
+57            <!--
+58                 Specifies an Android theme to apply to this Activity as soon as
+59                 the Android process has started. This theme is visible to the user
+60                 while the Flutter UI initializes. After that, this theme continues
+61                 to determine the Window background behind the Flutter UI.
+62            -->
+63            <meta-data
+63-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:28:13-31:17
+64                android:name="io.flutter.embedding.android.NormalTheme"
+64-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:29:15-70
+65                android:resource="@style/NormalTheme" />
+65-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:30:15-52
+66
+67            <intent-filter>
+67-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:32:13-35:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:33:17-68
+68-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:33:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:34:17-76
+70-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:34:27-74
+71            </intent-filter>
+72        </activity>
+73        <!--
+74             Don't delete the meta-data below.
+75             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+76        -->
+77        <meta-data
+77-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:39:9-41:33
+78            android:name="flutterEmbedding"
+78-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:40:13-44
+79            android:value="2" />
+79-->/Users/aecci/Desktop/BPP/bpp-app/android/app/src/main/AndroidManifest.xml:41:13-30
+80
+81        <provider
+81-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:9-17:20
+82            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+82-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-82
+83            android:authorities="com.bharatiyapopularparty.bpp.flutter.image_provider"
+83-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+84            android:exported="false"
+84-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+85            android:grantUriPermissions="true" >
+85-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-47
+86            <meta-data
+86-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-16:75
+87                android:name="android.support.FILE_PROVIDER_PATHS"
+87-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:15:17-67
+88                android:resource="@xml/flutter_image_picker_file_paths" />
+88-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-72
+89        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+90        <service
+90-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:19:9-31:19
+91            android:name="com.google.android.gms.metadata.ModuleDependencies"
+91-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-78
+92            android:enabled="false"
+92-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-36
+93            android:exported="false" >
+93-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-37
+94            <intent-filter>
+94-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:24:13-26:29
+95                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+95-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:25:17-94
+95-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:25:25-91
+96            </intent-filter>
+97
+98            <meta-data
+98-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:28:13-30:36
+99                android:name="photopicker_activity:0:required"
+99-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:29:17-63
+100                android:value="" />
+100-->[:image_picker_android] /Users/aecci/Desktop/BPP/bpp-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:30:17-33
+101        </service>
+102
+103        <activity
+103-->[:url_launcher_android] /Users/aecci/Desktop/BPP/bpp-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-11:74
+104            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+104-->[:url_launcher_android] /Users/aecci/Desktop/BPP/bpp-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-74
+105            android:exported="false"
+105-->[:url_launcher_android] /Users/aecci/Desktop/BPP/bpp-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-37
+106            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+106-->[:url_launcher_android] /Users/aecci/Desktop/BPP/bpp-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-71
+107        <activity
+107-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:23:9-27:75
+108            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+108-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:24:13-93
+109            android:excludeFromRecents="true"
+109-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:25:13-46
+110            android:exported="false"
+110-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:26:13-37
+111            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+111-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:27:13-72
+112        <!--
+113            Service handling Google Sign-In user revocation. For apps that do not integrate with
+114            Google Sign-In, this service will never be started.
+115        -->
+116        <service
+116-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:33:9-37:51
+117            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+117-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:34:13-89
+118            android:exported="true"
+118-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:35:13-36
+119            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+119-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:36:13-107
+120            android:visibleToInstantApps="true" />
+120-->[com.google.android.gms:play-services-auth:21.2.0] /Users/aecci/.gradle/caches/transforms-3/1470c368471b690e426d6b1e11f1e3f8/transformed/jetified-play-services-auth-21.2.0/AndroidManifest.xml:37:13-48
+121
+122        <activity
+122-->[com.google.android.gms:play-services-base:18.3.0] /Users/aecci/.gradle/caches/transforms-3/d5bfcabb161038be92502dbb972838e8/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:9-22:45
+123            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+123-->[com.google.android.gms:play-services-base:18.3.0] /Users/aecci/.gradle/caches/transforms-3/d5bfcabb161038be92502dbb972838e8/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:19-85
+124            android:exported="false"
+124-->[com.google.android.gms:play-services-base:18.3.0] /Users/aecci/.gradle/caches/transforms-3/d5bfcabb161038be92502dbb972838e8/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:22:19-43
+125            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+125-->[com.google.android.gms:play-services-base:18.3.0] /Users/aecci/.gradle/caches/transforms-3/d5bfcabb161038be92502dbb972838e8/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:21:19-78
+126
+127        <meta-data
+127-->[com.google.android.gms:play-services-basement:18.3.0] /Users/aecci/.gradle/caches/transforms-3/fad6ef52ce59c9657f33fe12833d7ad7/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+128            android:name="com.google.android.gms.version"
+128-->[com.google.android.gms:play-services-basement:18.3.0] /Users/aecci/.gradle/caches/transforms-3/fad6ef52ce59c9657f33fe12833d7ad7/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+129            android:value="@integer/google_play_services_version" />
+129-->[com.google.android.gms:play-services-basement:18.3.0] /Users/aecci/.gradle/caches/transforms-3/fad6ef52ce59c9657f33fe12833d7ad7/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+130
+131        <uses-library
+131-->[androidx.window:window:1.2.0] /Users/aecci/.gradle/caches/transforms-3/e02e2442d56d7a5d121631113ccd3cca/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+132            android:name="androidx.window.extensions"
+132-->[androidx.window:window:1.2.0] /Users/aecci/.gradle/caches/transforms-3/e02e2442d56d7a5d121631113ccd3cca/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+133            android:required="false" />
+133-->[androidx.window:window:1.2.0] /Users/aecci/.gradle/caches/transforms-3/e02e2442d56d7a5d121631113ccd3cca/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+134        <uses-library
+134-->[androidx.window:window:1.2.0] /Users/aecci/.gradle/caches/transforms-3/e02e2442d56d7a5d121631113ccd3cca/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+135            android:name="androidx.window.sidecar"
+135-->[androidx.window:window:1.2.0] /Users/aecci/.gradle/caches/transforms-3/e02e2442d56d7a5d121631113ccd3cca/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+136            android:required="false" />
+136-->[androidx.window:window:1.2.0] /Users/aecci/.gradle/caches/transforms-3/e02e2442d56d7a5d121631113ccd3cca/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+137
+138        <provider
+138-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/aecci/.gradle/caches/transforms-3/2baa682803fb6d1915aaecab0312b258/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+139            android:name="androidx.startup.InitializationProvider"
+139-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/aecci/.gradle/caches/transforms-3/2baa682803fb6d1915aaecab0312b258/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+140            android:authorities="com.bharatiyapopularparty.bpp.androidx-startup"
+140-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/aecci/.gradle/caches/transforms-3/2baa682803fb6d1915aaecab0312b258/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+141            android:exported="false" >
+141-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/aecci/.gradle/caches/transforms-3/2baa682803fb6d1915aaecab0312b258/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+142            <meta-data
+142-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/aecci/.gradle/caches/transforms-3/2baa682803fb6d1915aaecab0312b258/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+143                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+143-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/aecci/.gradle/caches/transforms-3/2baa682803fb6d1915aaecab0312b258/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+144                android:value="androidx.startup" />
+144-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/aecci/.gradle/caches/transforms-3/2baa682803fb6d1915aaecab0312b258/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+145            <meta-data
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+146                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+147                android:value="androidx.startup" />
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+148        </provider>
+149
+150        <receiver
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+151            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+152            android:directBootAware="false"
+152-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+153            android:enabled="true"
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+154            android:exported="true"
+154-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+155            android:permission="android.permission.DUMP" >
+155-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+156            <intent-filter>
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+157                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+157-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+157-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+158            </intent-filter>
+159            <intent-filter>
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+160                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+160-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+160-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+161            </intent-filter>
+162            <intent-filter>
+162-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+163                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+163-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+163-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+164            </intent-filter>
+165            <intent-filter>
+165-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+166                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+166-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+166-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/aecci/.gradle/caches/transforms-3/e7bfc43ef4e0a9b5449df11c985980ea/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+167            </intent-filter>
+168        </receiver>
+169    </application>
+170
+171</manifest>
