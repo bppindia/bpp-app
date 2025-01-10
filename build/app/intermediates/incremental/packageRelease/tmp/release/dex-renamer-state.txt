@@ -1,4 +1,4 @@
-#Fri Jan 10 10:22:48 IST 2025
+#Fri Jan 10 12:38:28 IST 2025
 base.0=/Users/mayurpatil/Desktop/s1/bpp-app/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
